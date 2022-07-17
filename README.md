@@ -2,7 +2,7 @@
 ## Algorithm Used: Random Forest Algorithm
 <sub>Random Forest algorithm is a supervised machine learning algorithm. It is mainly used for classification and regression problems. As the name suggest it consist of multiple decision trees which make the decision collectively. The random forest algorithm makes different amount of trees with the combination of all the variables in the data said so that every factor gets a chance to be a root node or to be included in the modelling.
   
-## Steps involved in random forest algorithm:
+## Steps involved in Random Forest Algorithm:
 <sub> Step 1: In Random forest n number of random records are taken from the data set having k number of records.
 
 <sub> Step 2: Individual decision trees are constructed for each sample.
