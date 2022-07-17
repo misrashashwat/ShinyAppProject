@@ -28,7 +28,12 @@ server <- function(input, output) {
   newdb$outcome[newdb$outcome=="false"]<-0
   newdb$outcome <- as.factor(newdb$outcome)
   rnd<- reactive({randomForest(data=newdb,outcome~.,ntree=input$tree, maxnodes=input$node)})
-  output$plot1= renderPlot({plot(rnd())})
+  output$plot1= renderPlot({
+    plot(rnd())
+    rnd.legend <- if (is.null(rnd()$test$err.rate)) {colnames(rnd()$err.rate)}
+    else {colnames(rnd()$test$err.rate)}
+    legend("top", cex =1, legend=rnd.legend, lty=c(1,2,3), col=c(1,2,3), horiz=T)
+    })
   output$plot2= renderPlot({
   rf.predicted<- predict(rnd(),type = 'prob',predict.all=TRUE)
   th<-seq(0,1,0.001)
