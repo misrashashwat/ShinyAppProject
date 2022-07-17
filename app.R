@@ -9,7 +9,7 @@ library(verification)
 ui <- fluidPage(
   headerPanel('Random Forest Model for Testing Diabetes'),
   sidebarPanel(
-    sliderInput(inputId = "node",label = 'Choose number of max nodes:',step = 1,value = 5,min = 1, max = 50),
+    sliderInput(inputId = "node",label = 'Choose number of max nodes:',step = 1,value = 5,min = 2, max = 50),
     sliderInput(inputId = "tree",label = "choose Number of trees:",step=10, value = 1000,min = 10, max = 1000),
   ),
   mainPanel(
